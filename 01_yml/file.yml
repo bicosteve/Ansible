@@ -1,0 +1,17 @@
+items:
+  - banana
+  - orange
+  - cabbage
+  - brocolli
+  - grapes
+  - carrots
+
+fruits:
+  - banana
+  - orange
+  - grapes
+
+vegetables:
+  - cabbage
+  - carrots
+  - brocolli

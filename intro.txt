@@ -1,1 +1,30 @@
 THESE ARE NOTES FOR ANSIBLE
+
+1. YAML - yet another markup language
+
+- use two spaces on yml
+- consit of two things, list and dictionary
+
+1. List 
+
+shopping:
+  - eggs
+  - milk 
+  - fruits
+# list is a collection of records.
+
+2. Dictionary 
+- are in the form of key value pairs
+key: value 
+- dictionary are nested.
+
+purchased:
+  fruit:
+    apple:1
+    banana:3
+    orange:5
+  needToBuy:
+    - coffee
+    - tea
+    - milk 
+  
