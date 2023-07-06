@@ -1,0 +1,20 @@
+INSTRUCTIONS
+Create 3 individual hosts:
+- mail.mycorp.local
+- smtp.mycorp.local
+- auth.mycorp.local 
+
+
+Group the domain controllers 
+- dc01.mycorp.local 
+- dc02.mycorp.local 
+
+Group the London App servers 
+- app01.ldn.mycorp.local 
+- app02.lnd.mycorp.local 
+
+Group the texas app servers 
+- app03.tx.mycorp.local 
+- app04.tx.mycorp.local 
+
+Group the london and texas servers in a single group called: itlappsrv
