@@ -1,0 +1,18 @@
+# specify host
+- hosts: web
+  # which user to run
+  remote_user: root
+  become: yes
+
+  #tasks - what we want ansible to do on local machine
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: installed
+    - name: Remove Apache
+      yum:
+        name: httpd
+        state: Removed
+# run the playbook
+# ansible-playbook -i aws.ini playbook.yml

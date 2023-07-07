@@ -1,0 +1,26 @@
+# specify host
+- hosts: web
+  # which user to run
+  remote_user: root
+  become: yes
+
+  #tasks - what we want ansible to do on local machine
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: installed
+    # service
+    - name: Restart Apache
+      service:
+        name: httpd
+        state: restarted
+    - name: Remove Apache
+      yum:
+        name: httpd
+        state: Removed
+# run the playbook
+# ansible-playbook -i aws.ini playbook.yml
+# -i => refers to inventory file
+# playbook.yml refers to the playbook
+# NB -> look for services and handlers
