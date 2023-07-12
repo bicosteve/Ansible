@@ -1,0 +1,13 @@
+[all]
+ec2-user@ec2-16-170-255-143.eu-north-1.compute.amazonaws.com
+
+[web_app]
+ec2-user@ec2-16-170-255-143.eu-north-1.compute.amazonaws.com
+
+
+[backend_apps]
+ec2-user@52.15.235.142
+ec2-user@52.15.235.143
+
+[db_apps]
+ec2-user@52.15.235.144

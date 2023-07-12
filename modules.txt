@@ -1,0 +1,50 @@
+Ansible Modules 
+- are standard scripts that can be used inside ansible playbook
+- they can also be used from the command line for a task 
+- check for ansible modules with ansible-doc -l 
+- check the use of ansible module by checking 'ansible shell module' 
+
+
+EXECUTING STAFF ON CLIENTS 
+- when any command is executed on the ansible engie, it creates a .ansible on the ansible client 
+- ansible engine creates some binary which are then copied to the clients and then executed on the client.
+- after execution, the file will be removed from the client 
+
+
+TRANSFER FILES FROM CLIENT 
+- user can copy files on ansible clients from ansible controller 
+- use ansible [group] -m [module] -a [src=source_path dest=destination_path]
+- ansible web_app -m copy -a "src=/root/ansible/ansible_text.txt dest=/temp"
+=> copy ansible_text.txt on client to destination temp on ansible engine
+
+COPY CONTENT IN A FILE 
+use ansible [group] -m copy -a "content='this is my content' dest=/temp/index.txt" 
+on your machine use cat index.txt 
+
+MANAGING FILE/DIRECTORY ON CLIENTS USING ANSIBLE ENGINE
+
+1. Creating Files 
+- use file module of ansible 
+- ansible [group] -m file -a "path=file/dir destination location state=<state>" 
+- 1. creating a file: ansible [group] -m file -a "path=file destination location state=touch"
+- ansible web_app -m file -a "dest=/temp/temp_test.txt state=touch"
+- 2. delete file: ansible [group] -m file -a "path=file destination location state=absent" 
+- ansible web_app -m file -a "dest=/temp/temp_test.txt state=absent" 
+- 3. creating file with executable permissions 
+- ansible web_app -m file -a "dest=/temp/temp_test.txt state=touch mode=0775"
+
+2. Creating Directory 
+- use ansible [group] -m file -a "path=directory destination location state=directory"
+- ansible web_app -m file -a "dest=/tmp/mydir/bix state=directory"
+- ansible web_app -m file -a "dest=/tmp/mydir/bix state=absent"
+
+
+INSTALLING PACKAGES ON ANSIBLE CLIENT 
+- use package manager to install packages on ansible client from ansible engine .
+- can use ym or apt
+- ansible [group] -m yum/apt -a "name=<package-name> state=<state>"
+- ansible web_app -m yum -a "name=nginx state=present"
+- ansible web_app -m yum -a "name=git state=present" -b => execute command as root user.
+=> will check for the git package and if not found will install it 
+- ansible web_app -m yum -a "name=git state=latest" -b => will install the package
+- ansible web_app -m yum -a "name=python3 state=present" -b

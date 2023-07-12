@@ -1,0 +1,16 @@
+// ADHOC COMMANDS
+- are used to run few commands on ansible engine 
+- these commands are few in nature 
+- ad-hoc command is one line command that perform one task on ansible client.
+- the syntax for adhoc command is -> ansible [group] -m shell -a [command]
+- (-m) is for module 
+- (-a) is the argument
+
+
+(1) free -m => defines the memory status
+(2) uptime => shows the uptime of your machine
+(3) ansible web_apps -m ping => ansible is cli, web_apps is the group -m ping -m module, ping is a module we are using
+(4) ansible web_app -m shell -a "free -m" => shell for checking the memory of the ansible client 
+(5) ansible web_app -m shell -a "uptime" => check for the machine uptime 
+(6) ansible web_app -m shell -a "yum list installed" => check for packages installed in your ansible client.
+(7) ansible web_app -m shell -a "yum list installed | grep nginx"  => filter for nginx in the installed list 
