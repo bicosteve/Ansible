@@ -27,4 +27,27 @@ purchased:
     - coffee
     - tea
     - milk 
+
+
+  // Ansible modules 
+  use the 'state' on the docs.
+  - uses 'past' language 
+  - eg installed, removed, present
+
+
+// Ansible Automation
+- create a virtual environment on your project
+- activate the virtual environment
+- install ansible 
+- check for ansible version with ansible --version 
+- create ansible.cfg file on the root folder of your project 
+- create a hosts file on the root folder of your project 
+- on the ansible.cfg write [defaults]
+- under it, write inventory = hosts 
+- hosts should have [all]
+- install ansible using 
+- verify ansible configuration with => ansible all -m ping 
+- check python version on your AWS node 
+- verify passwordless access from your ansible engine to ansible client
+- add hosts in inventory file and test ansible connection 
   
