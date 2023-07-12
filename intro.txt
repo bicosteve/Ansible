@@ -96,6 +96,31 @@ purchased:
 - point your inventory on ansible.cfg to any of the hosts files defined .
 
 
+// Inventory Files with Groups 
+[all] - is a group 
+- can define other groups eg web apps, backends, etc 
+
+[web_apps]
+ec2-user@52.15.235.141
+
+[backend_apps]
+ec2-user@52.15.235.142
+ec2-user@52.15.235.143
+
+[db_apps]
+ec2-user@52.15.235.144
+
+To ping each of the group servers use the groups name 
+ansible web_apps -m ping - will ping the web app servers 
+ansible backend_apps -m ping  => will ping the web app servers 
+ansible db_apps -m ping => will ping the db servers 
+
+Ping Two Groups 
+
+ansible db_apps:web_app -m ping => will ping db and web servers at once 
+
+
+
 
 
   
