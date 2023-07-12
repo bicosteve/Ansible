@@ -82,5 +82,20 @@ purchased:
 - should return an object with ' SUCCESS' ping - pong 
 
 
+// Ansible Directory Structure
+- original importan files are ansible.cfg
+- hosts
+- in the config file, we are defining hosts 
+- in the host file we are defining the servers which we want to access 
+- config has hosts 
+- hosts has servers 
+
+- In case of many environment, we will not use hosts file but we will create different files for configs for the environment servers.
+- eg Dev ips, Per Ips, Stg Ips 
+- these then will be mapped into ansible.cfg file 
+- point your inventory on ansible.cfg to any of the hosts files defined .
+
+
+
 
   
